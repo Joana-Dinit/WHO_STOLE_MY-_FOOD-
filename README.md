@@ -13,8 +13,6 @@
 
 ### Project Description
 
-### Project Description
-
 Who Ate My Food? is a funny food investigation web application that investigates suspiciously disappearing food.
 
 Users upload a BEFORE photo and an AFTER photo of their food. The application can use AI image analysis to determine whether the food appears to have decreased.
@@ -31,19 +29,33 @@ This project solves the extremely serious problem of finding someone to blame fo
 
 ### The Solution (that nobody asked for)
 
-### The Solution (that nobody asked for)
-
 The application acts as a completely unreliable food detective.
 
-Users upload BEFORE and AFTER photos of their food. AI image analysis is used to determine whether the food appears to have decreased.
+The user:
 
-If food appears to be missing, the application randomly selects a suspect from the list of people at home and generates a suspicion percentage and ridiculous fake evidence.
+1. Uploads a BEFORE photo of the food.
+2. Confirms whether something feels "fisshhyy".
+3. Uploads an AFTER photo.
+4. Adds the names of people who were around the food.
+5. Continues to a fictional investigation result.
+
+The planned investigation result includes:
+
+- A randomly selected suspect
+- A suspicion percentage
+- Ridiculous fake evidence
 
 The application is intentionally fictional and does not actually identify who ate the food.
 
 ## Technical Details
 
 ### Technologies/Components Used
+
+- HTML
+- CSS
+- JavaScript
+- Gemini API — planned
+- Backend API — planned
 
 ### Implementation
 
@@ -59,14 +71,6 @@ For Software:
 - Frontend will be deployed using Vercel
 - Backend will be deployed using Render
 
-For Hardware:
-
-No hardware required
-
-### Implementation
-
-For Software:
-
 # Installation
 
 [commands]
@@ -81,8 +85,11 @@ For Software:
 
 # Screenshots (Add at least 3)
 
-![Screenshot1](Add screenshot 1 here with proper name)
-_Add caption explaining what this shows_
+### Screenshots
+
+![Suspicion screen](Something fisshhyy.png)
+
+_The food detective asks whether something suspicious happened and lets the user choose whether to investigate further._
 
 ![Screenshot2](Add screenshot 2 here with proper name)
 _Add caption explaining what this shows_
@@ -129,9 +136,24 @@ _Explain what the video demonstrates_
 
 ## Team Contributions
 
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- ## Team Contributions
+
+### Aryalakshmi E S
+
+- Frontend development
+- HTML/CSS/JavaScript implementation
+- User interaction and screen navigation
+- Photo upload handling
+- People input and validation
+- Result-screen functionality
+- Print and restart functionality
+
+### Joana Dinit
+
+- Backend development
+- Gemini API integration
+- AI image-analysis workflow
+- Backend/frontend integration
 
 ---
 

@@ -63,8 +63,7 @@ afterImageButton.addEventListener("click", function() {
     
     afterPhotoFile = afterImage.files[0];
 
-    console.log(beforePhotoFile);
-    console.log(afterPhotoFile);
+    
 
     afterPhotoScreen.style.display ="none";
     peopleScreen.style.display ="block";
@@ -72,14 +71,7 @@ afterImageButton.addEventListener("click", function() {
 });
 
 addPeopleButton.addEventListener("click", function() {
-    /*const count = Number(numberOfPeople.value);
-    peopleInputs.innerHTML = "";
-    for(let i=0; i<count; i++)
-    { 
-    const input = document.createElement("input");
-    input.placeholder = "Enter person's name";
-    peopleInputs.appendChild(input);
-    }*/
+    
     const input = document.createElement("input");
 
     input.placeholder = "Enter here";
