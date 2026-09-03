@@ -1,0 +1,27 @@
+{
+  "name": "who_stole_my-_food-",
+  "version": "1.0.0",
+  "description": "<img width=\"1280\" height=\"640\" alt=\"git (1)\" src=\"https://github.com/user-attachments/assets/8920b256-2ba8-4988-b824-5351134eb4bd\" />",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joana-Dinit/WHO_STOLE_MY-_FOOD-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Joana-Dinit/WHO_STOLE_MY-_FOOD-/issues"
+  },
+  "homepage": "https://github.com/Joana-Dinit/WHO_STOLE_MY-_FOOD-#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "multer": "^2.3.0"
+  }
+}
