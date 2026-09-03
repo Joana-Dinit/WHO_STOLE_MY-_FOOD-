@@ -13,9 +13,15 @@
 
 ### Project Description
 
+### Project Description
+
 Who Ate My Food? is a funny food investigation web application that investigates suspiciously disappearing food.
 
-Users can enter food details and later compare the remaining quantity. The app then generates a ridiculous investigation, randomly suspects someone, and provides funny evidence.
+Users upload a BEFORE photo and an AFTER photo of their food. The application can use AI image analysis to determine whether the food appears to have decreased.
+
+It then generates a ridiculous investigation, randomly suspects someone, and provides funny evidence.
+
+The application is intentionally fictional and does not actually identify who ate the food..
 
 ### The Problem (that doesn't exist)
 
@@ -25,9 +31,13 @@ This project solves the extremely serious problem of finding someone to blame fo
 
 ### The Solution (that nobody asked for)
 
+### The Solution (that nobody asked for)
+
 The application acts as a completely unreliable food detective.
 
-It can compare food quantities, accept before-and-after food photos, and eventually use AI image analysis to determine whether the food appears to have decreased. It then generates a random suspect, suspicion percentage, and funny evidence.
+Users upload BEFORE and AFTER photos of their food. AI image analysis is used to determine whether the food appears to have decreased.
+
+If food appears to be missing, the application randomly selects a suspect from the list of people at home and generates a suspicion percentage and ridiculous fake evidence.
 
 The application is intentionally fictional and does not actually identify who ate the food.
 
@@ -35,17 +45,19 @@ The application is intentionally fictional and does not actually identify who at
 
 ### Technologies/Components Used
 
+### Implementation
+
 For Software:
 
-- HTML
-- CSS
-- JavaScript
-- Node.js
-- [Gemini API]
-- Git
-- GitHub
-- Vercel
-- Render
+- Frontend built using HTML, CSS and JavaScript
+- Users can enter the people living at home
+- Users can upload BEFORE and AFTER food photos
+- JavaScript handles user input and photo selection
+- AI image analysis will be integrated using the Gemini API
+- Backend will handle the AI API request securely
+- Random suspect and funny evidence generation will be added
+- Frontend will be deployed using Vercel
+- Backend will be deployed using Render
 
 For Hardware:
 
