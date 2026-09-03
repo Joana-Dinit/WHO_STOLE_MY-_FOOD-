@@ -185,6 +185,8 @@ Do not add extra explanations, numbered lists, or Markdown.
     let suspect = null;
     let suspicion = null;
     let evidence = null;
+    let resultMessage = "Calm down brother... You're just hungry";
+    let caseStatus = "EAT SNICKERS";
     const evidenceList = [
     "No Evidence Needed... Nee thanne🫵!",
     "Had suspiciously convenient access to the the food🤔",
@@ -205,6 +207,9 @@ if (foodReduced) {
         Math.floor(Math.random() * evidenceList.length);
 
     evidence = evidenceList[evidenceIndex];
+
+    resultMessage = "🚨 FOOD CRIME DETECTED";
+    caseStatus = "WHO TOOK MY FOOODD??!!";
 }
 
             res.json({
@@ -213,8 +218,10 @@ if (foodReduced) {
     missingDescription: missingDescription,
     suspect: suspect,
     suspicion: suspicion,
-    evidence: evidence
-})
+    evidence: evidence,
+    resultMessage: resultMessage,
+    caseStatus: caseStatus
+});
 
         } catch (error) {
 
