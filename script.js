@@ -20,6 +20,12 @@ const peopleInputs = document.getElementById("peopleInputs");
 const continueButton = document.getElementById("continueButton");
 
 const resultScreen = document.getElementById("resultScreen");
+const investigateAgain = document.getElementById("investigateAgain");
+const printButton = document.getElementById("printButton");
+const finishButton = document.getElementById("finishButton");
+
+let beforePhotoFile = null;
+let afterPhotoFile = null;
 
 startButton.addEventListener("click", function() {
     welcomeScreen.style.display = "none";
@@ -27,8 +33,15 @@ startButton.addEventListener("click", function() {
 });
 
 beforeImageButton.addEventListener("click", function() {
+    
+    if (beforeImage.files.length === 0) {
+    alert("No image is selected");
+    }
+    else { 
+    beforePhotoFile = beforeImage.files[0];
     foodScreen.style.display = "none";
     suspicionScreen.style.display = "block";
+    }
 });
 
 yesSuspicion.addEventListener("click", function() {
@@ -42,8 +55,20 @@ noSuspicion.addEventListener("click", function() {
 });
 
 afterImageButton.addEventListener("click", function() {
+
+    if(afterImage.files.length === 0) {
+        alert("Oh! No image is selected");
+    }
+    else { 
+    
+    afterPhotoFile = afterImage.files[0];
+
+    console.log(beforePhotoFile);
+    console.log(afterPhotoFile);
+
     afterPhotoScreen.style.display ="none";
     peopleScreen.style.display ="block";
+    }
 });
 
 addPeopleButton.addEventListener("click", function() {
@@ -63,16 +88,42 @@ addPeopleButton.addEventListener("click", function() {
 });
 
 continueButton.addEventListener("click", function() {
-    peopleScreen.style.display ="none";
-    resultScreen.style.display ="block";
+
     const nameInputs = peopleInputs.querySelectorAll("input");
-    
+
     const people = [];
+
     nameInputs.forEach(function(input) {
-        const name = input.value;
+        
+        const name = input.value.trim();
+
+        if (name !== "") {
         people.push(name);
+    }
+    });
+
+    if (people.length < 2) {
+        alert("Need atleast two people");
+    }
+    else { 
+        peopleScreen.style.display ="none";
+        resultScreen.style.display ="block";
+     }
 
 });
-     console.log(people);
+investigateAgain.addEventListener("click", function () {
+    resultScreen.style.display = "none";
+    afterPhotoScreen.style.display ="block";
+});
+
+printButton.addEventListener("click", function() {
+
+    window.print();
+
+});
+
+finishButton.addEventListener("click", function() {
+    resultScreen.style.display = "none";
+    welcomeScreen.style.display = "block";
 
 });
