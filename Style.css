@@ -4,87 +4,459 @@
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f5f5;
     min-height: 100vh;
-}
 
-.container {
-    width: 90%;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 40px 0;
-    text-align: center;
-}
+    font-family: "Courier New", monospace;
+    color: #4E070C;
 
-h1 {
-    font-size: 40px;
-    margin-bottom: 10px;
-}
+    background:
+        radial-gradient(circle at 15% 20%, #FF670E 0%, transparent 28%),
+        radial-gradient(circle at 85% 25%, #D22701 0%, transparent 30%),
+        radial-gradient(circle at 25% 85%, #AAD15F 0%, transparent 32%),
+        linear-gradient(135deg, #FDE4CE 0%, #FF670E 45%, #4E070C 100%);
 
-.subtitle {
-    font-size: 18px;
-    margin-bottom: 30px;
+    background-attachment: fixed;
 }
-
-.card,
-.result-card {
-    background: white;
-    padding: 30px;
-    margin-bottom: 25px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.card h2,
-.result-card h2 {
-    margin-top: 0;
-}
-
-label {
-    display: block;
-    text-align: left;
-    margin-top: 20px;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-input[type="text"],
-input[type="file"] {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    font-size: 16px;
-}
-
-button {
-    margin-top: 25px;
-    padding: 14px 25px;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-button:hover {
-    transform: scale(1.03);
-}
-
-.result-card {
-    min-height: 120px;
-}
-
-#verdict {
-    font-size: 18px;
-    line-height: 1.6;
-}
+/* =========================================
+   GENERAL SCREEN STYLE
+========================================= */
 
 section {
     display: none;
+
+    width: 92%;
+    max-width: 900px;
+    min-height: 420px;
+
+    margin: 70px auto;
+    padding: 60px 55px;
+
+    text-align: center;
+
+    background: #FDE4CE;
+    color: #4E070C;
+
+    border: 7px solid #4E070C;
+    border-radius: 20px;
+
+    box-shadow:
+        10px 10px 0 #FF670E,
+        18px 18px 0 rgba(78, 7, 12, 0.3);
+
+    position: relative;
+    overflow: hidden;
 }
+/* =========================================
+   WELCOME SCREEN
+========================================= */
 
 #welcomeScreen {
     display: block;
+    max-width: 850px;
+    margin-top: 100px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #5fa63b 0,
+            #5fa63b 16px,
+            #7b4f2a 16px,
+            #7b4f2a 100%
+        );
+
+    border: 6px solid #222;
+
+    box-shadow:
+        10px 10px 0 #111,
+        inset 0 0 0 4px #999;
+}
+
+#welcomeScreen h1 {
+    font-size: 52px;
+    letter-spacing: 3px;
+    margin: 20px 0;
+
+    text-shadow:
+        4px 4px 0 #222;
+}
+
+#welcomeScreen p {
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+/* =========================================
+   HEADINGS
+========================================= */
+
+section h1,
+section h2 {
+    margin-top: 0;
+    text-shadow: 3px 3px 0 #111;
+}
+
+section h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+section p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+section h4 {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+/* =========================================
+   INPUTS
+========================================= */
+
+input[type="file"] {
+    display: block;
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+
+    background: #242424;
+    color: white;
+
+    border: 4px solid #111;
+    outline: 3px solid #777;
+
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+}
+
+input[type="file"]::file-selector-button {
+    padding: 10px 14px;
+    margin-right: 12px;
+
+    background: #5cae3a;
+    color: white;
+
+    border: 3px solid #244b18;
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+/* =========================================
+   PEOPLE INPUTS
+========================================= */
+
+#peopleInputs {
+    margin-top: 25px;
+}
+
+#peopleInputs input {
+    display: block;
+    width: 100%;
+    margin: 14px 0;
+
+    padding: 14px;
+
+    background: #e9e2cf;
+    color: #222;
+
+    border: 4px solid #3d2b1f;
+
+    font-family: "Courier New", monospace;
+    font-size: 16px;
+    font-weight: bold;
+
+    outline: none;
+}
+
+#peopleInputs input:focus {
+    border-color: #75b943;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+button {
+    margin: 12px 6px 0;
+    padding: 15px 24px;
+
+    background: #5aa334;
+    color: white;
+
+    border: 4px solid #294b18;
+
+    font-family: "Courier New", monospace;
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        5px 5px 0 #111;
+
+    transition: transform 0.08s ease;
+}
+
+button:hover {
+    background: #70bd43;
+    transform: translate(2px, 2px);
+    box-shadow:
+        3px 3px 0 #111;
+}
+
+button:active {
+    transform: translate(5px, 5px);
+    box-shadow: none;
+}
+
+/* =========================================
+   SUSPICION SCREEN
+========================================= */
+
+/*#suspicionScreen {
+    background:
+        linear-gradient(
+            to bottom,
+            #6b6b6b 0%,
+            #454545 100%
+        );
+}*/
+
+#suspicionScreen h2 {
+    color: #ffdf4d;
+    font-size: 32px;
+}
+
+/* =========================================
+   RESULT SCREEN
+========================================= */
+
+/*#resultScreen {
+    background:
+        linear-gradient(
+            to bottom,
+            #4f4f4f,
+            #303030
+        );
+}*/
+
+#resultScreen h2 {
+    color: #ffdf4d;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+#resultScreen p {
+    padding: 14px;
+    margin: 14px 0;
+
+    background: #222;
+
+    border: 3px solid #111;
+
+    font-size: 17px;
+    text-align: left;
+}
+
+/* =========================================
+   FINAL SCREEN
+========================================= */
+
+#last {
+    padding-top: 140px;
+
+   /* background:
+        linear-gradient(
+            to bottom,
+            #5da63b,
+            #356a25
+        );*/
+}
+
+#last h1 {
+    font-size: 38px;
+    text-shadow: 4px 4px 0 #111;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    section {
+        width: 94%;
+        margin-top: 30px;
+        padding: 30px 18px;
+    }
+
+    #welcomeScreen {
+        margin-top: 60px;
+    }
+
+    #welcomeScreen h1 {
+        font-size: 36px;
+    }
+
+    section h2 {
+        font-size: 25px;
+    }
+
+    button {
+        width: 100%;
+        margin: 9px 0;
+    }
+
+    #last {
+        padding-top: 90px;
+    }
+}
+
+/* =========================================
+   MOVING FOOD
+========================================= */
+
+.floating-food {
+    position: fixed;
+    font-size: 42px;
+    pointer-events: none;
+    z-index: 1;
+    animation: foodMove linear infinite;
+}
+
+.food-one {
+    top: 18%;
+    left: -80px;
+    animation-duration: 12s;
+}
+
+.food-two {
+    top: 48%;
+    left: -100px;
+    animation-duration: 16s;
+    animation-delay: 3s;
+}
+
+.food-three {
+    top: 72%;
+    left: -100px;
+    animation-duration: 20s;
+    animation-delay: 6s;
+}
+
+@keyframes foodMove {
+    0% {
+        transform: translateX(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateX(50vw) rotate(15deg);
+    }
+
+    100% {
+        transform: translateX(110vw) rotate(-15deg);
+    }
+}
+
+/* =========================================
+   BLOCK CREATURES
+========================================= */
+
+.pixel-creature {
+    position: fixed;
+    width: 70px;
+    height: 70px;
+
+    background: #39a83b;
+
+    border: 5px solid #173d18;
+
+    box-shadow:
+        6px 6px 0 #111;
+
+    z-index: 2;
+}
+
+/* Creature 1 */
+.creature-one {
+    left: 5%;
+    bottom: 8%;
+
+    animation: creatureBounce 2s ease-in-out infinite;
+}
+
+/* Creature 2 */
+.creature-two {
+    right: 5%;
+    bottom: 13%;
+
+    background: #6b4db8;
+
+    border-color: #32215c;
+
+    animation: creatureBounce 2.4s ease-in-out infinite;
+}
+
+/* =========================================
+   FLOATING FOOD + EMOJIS
+========================================= */
+
+.floating-art {
+    position: fixed;
+    font-size: 48px;
+    z-index: 2;
+    pointer-events: none;
+
+    animation: littleJump 2s ease-in-out infinite;
+}
+
+/* Fixed positions */
+.art-one {
+    left: 7%;
+    bottom: 10%;
+    animation-delay: 0s;
+}
+
+.art-two {
+    left: 20%;
+    bottom: 7%;
+    animation-delay: 0.4s;
+}
+
+.art-three {
+    right: 20%;
+    bottom: 8%;
+    animation-delay: 0.8s;
+}
+
+.art-four {
+    right: 7%;
+    bottom: 12%;
+    animation-delay: 1.2s;
+}
+
+.art-five {
+    left: 35%;
+    bottom: 5%;
+    animation-delay: 1.6s;
+}
+
+.art-six {
+    right: 36%;
+    bottom: 8%;
+    animation-delay: 2s;
+}
+
+@keyframes littleJump {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-22px);
+    }
 }

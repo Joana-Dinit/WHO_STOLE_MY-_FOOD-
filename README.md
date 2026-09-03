@@ -87,7 +87,7 @@ For Software:
 
 ### Screenshots
 
-![Suspicion screen](Something fisshhyy.png)
+![Suspicion screen](Something%20fisshhyy.png)
 
 _The food detective asks whether something suspicious happened and lets the user choose whether to investigate further._
 

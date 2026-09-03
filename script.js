@@ -5,6 +5,8 @@ const foodScreen = document.getElementById("foodScreen");
 const beforeImage = document.getElementById("beforeImage");
 const beforeImageButton = document.getElementById("beforeImageButton");
 
+const loadingScreen = document.getElementById("loadingScreen");
+
 const suspicionScreen = document.getElementById("suspicionScreen");
 const yesSuspicion = document.getElementById("yesSuspicion");
 const noSuspicion = document.getElementById("noSuspicion");
@@ -40,7 +42,11 @@ beforeImageButton.addEventListener("click", function() {
     else { 
     beforePhotoFile = beforeImage.files[0];
     foodScreen.style.display = "none";
-    suspicionScreen.style.display = "block";
+    loadingScreen.style.display ="block";
+    setTimeout(function() {
+        loadingScreen.style.display = "none";
+        suspicionScreen.style.display = "block";
+    }, 10000);
     }
 });
 
@@ -79,28 +85,82 @@ addPeopleButton.addEventListener("click", function() {
     peopleInputs.appendChild(input);
 });
 
-continueButton.addEventListener("click", function() {
+continueButton.addEventListener("click", async function() {
 
     const nameInputs = peopleInputs.querySelectorAll("input");
 
     const people = [];
 
     nameInputs.forEach(function(input) {
-        
+
         const name = input.value.trim();
 
         if (name !== "") {
-        people.push(name);
-    }
+            people.push(name);
+        }
+
     });
 
     if (people.length < 2) {
-        alert("Need atleast two people");
+        alert("Need at least two people");
+        return;
     }
-    else { 
-        peopleScreen.style.display ="none";
-        resultScreen.style.display ="block";
-     }
+
+    const formData = new FormData();
+
+    formData.append("beforeImage", beforePhotoFile);
+    formData.append("afterImage", afterPhotoFile);
+    formData.append("suspects", JSON.stringify(people));
+
+    try {
+
+        const response = await fetch("http://localhost:5000/analyze", {
+            method: "POST",
+            body: formData
+        });
+
+        if (!response.ok) {
+            throw new Error("Backend request failed");
+        }
+
+        const data = await response.json();
+
+        resultScreen.querySelector("h2").textContent = data.resultMessage;
+
+        if (data.foodReduced) {
+
+            suspect.textContent = "Primary Suspect: " + data.suspect;
+
+            suspicion.textContent =
+                "Suspicion: " + data.suspicion + "%";
+
+            evidence.textContent =
+                "Evidence: " + data.evidence;
+
+        } else {
+
+            suspect.textContent = "🚨 False Alarm!";
+
+            suspicion.textContent =
+                "No significant food reduction detected.";
+
+            evidence.textContent =
+                "Case closed. Your food may have simply looked suspicious. 😂";
+
+        }
+
+        peopleScreen.style.display = "none";
+        resultScreen.style.display = "block";
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert(
+            "Could not connect to the food detective backend. Make sure the server is running."
+        );
+
+    }
 
 });
 investigateAgain.addEventListener("click", function () {
