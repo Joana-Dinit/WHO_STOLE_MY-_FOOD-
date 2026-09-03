@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Joana-Dinit/WHO_STOLE_MY-_FOOD-#readme",
   "dependencies": {
+    "@google/genai": "^2.21.0",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
