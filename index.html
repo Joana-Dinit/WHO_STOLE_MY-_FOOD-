@@ -11,59 +11,88 @@
 
 <body>
 
-    <div class="container">
+    <section id="welcomeScreen">
 
-        <h1>🍕 WHO ATE MY FOOD?</h1>
+        <h1>WHO ATE MY FOOD?</h1>
 
-        <p class="subtitle">
-            The world's most useless food investigation system 🔎
-        </p>
+        <p>The world's most useless food investigation system.</p>
 
-        <div class="card">
+        <button id="startButton">START INVESTIGATION</button>
 
-            <h2>🚨 Start an Investigation</h2>
+    </section>
 
-            <label>Who lives at home?</label>
 
-            <input
-                type="text"
-                id="people"
-                placeholder="Brother, Sister, Mother..."
-            >
+    <section id="foodScreen">
 
-            <label>📸 Upload BEFORE photo</label>
+    <h2>🍽️ Hey, what do you have to eat?</h2>
 
-            <input
-                type="file"
-                id="beforePhoto"
-                accept="image/*"
-            >
+    <p>Show us the evidence before things get suspicious.</p>
 
-            <label>📸 Upload AFTER photo</label>
+    <input type="file" id="beforeImage" accept="image/*">
+    <button id="beforeImageButton">Go</button>
 
-            <input
-                type="file"
-                id="afterPhoto"
-                accept="image/*"
-            >
+    </section>
 
-            <button id="investigateButton">
-                🔎 INVESTIGATE
-            </button>
+    <section id="suspicionScreen">
 
-        </div>
+    <h2><B>🤨 Something is fisshhyy, right?</B></h2>
 
-        <div class="result-card" id="result">
+    <h4>Do you wanna CHECK??...</h4>
 
-            <h2>🕵️ Investigation Result</h2>
+    <button id="yesSuspicion">YES, SOMETHING IS WRONG</button>
 
-            <p id="verdict">
-                Upload the food photos and start the investigation...
-            </p>
+    <button id="noSuspicion">NO, I'M JUST HUNGRY</button>
 
-        </div>
+</section>
 
+<section id="afterPhotoScreen">
+
+    <h2>📸 Show me what remains...</h2>
+
+    <p>Upload a photo of the food now.</p>
+
+    <input type="file" id="afterImage" accept="image/*">
+    <button id="afterImageButton">Go</button>
+
+    </section>
+
+    <section id="peopleScreen">
+
+    <h2>👀 Who was around you?</h2>
+
+    <p>Who were near the food?</p>
+
+    <! <input type="number" id="numberOfPeople"  > 
+
+    <div id="peopleInputs">
+        <!-- names will appear here later -->
     </div>
+
+    <button id="addPeopleButton">ADD PEOPLE</button>
+
+    <button id="continueButton">CONTINUE INVESTIGATION</button>
+
+</section>
+<section id="resultScreen">
+
+    <h2>Don't you wanna know who took your fooodd?</h2>
+
+    <p id="suspect">Suspect: </p>
+
+    <p id="suspicion">percentage:</p>
+
+    <p id="evidence">Evidence: </p>
+    <button id="????????">INVESTIGATE AGAIN</button>
+
+    <!-- Add the button here -->
+
+</section>
+
+<section id="last">
+
+    <h1>Hey! Enjoy your food 😌🍴</h1>
+
+</section>
 
     <script src="script.js"></script>
 
