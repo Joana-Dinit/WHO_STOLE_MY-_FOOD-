@@ -6,43 +6,50 @@
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: Noobiess
 
 
 ### Team Members
-- Team Lead: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Member 1: [Joana Dinit] - [Model Engineering College, Thrikkakara]
+- Member 2: [Aryalakshmi ES] - [Model Engineering College, Thrikkakara]
 
 ### Project Description
-[2-3 lines about what your project does]
+Who Ate My Food? is a fun, interactive AI-powered food investigation web application that determines whether our food has been reduced by comparing before and after images. If a change is detected, the system analyzes what appears to be missing and generates a fictional investigation result by randomly selecting a suspect from the list of people provided by the user, along with a random suspicion percentage and humorous evidence.
 
 ### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
+Someone ate your food.
+You have no witnesses, no evidence, and absolutely no idea who did it.
+The only thing you have left is a before photo, an after photo, and a feeling of betrayal.
 
 ### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
+Food is an emotion. And you totally cannot let another person mess it up. 
+Who Ate My Food? uses AI to compare before and after photos of your food and detect whether anything has mysteriously disappeared.
+And based on  "evidences" it will blame one of the people you suspect. Cuz sometimes blaming others for your own carelessness is the best form of therapy.
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+-HTML5
+-CSS3
+-JavaScript
+-Node.js
+-Express.js
+-Google Gemini AI
+-Multer
+-CORS
+-dotenv
+-Git & GitHub
+-Postman
 
 For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
-
+- None
+- 
 ### Implementation
 For Software:
 # Installation
-[commands]
-
+npm install
 # Run
-[commands]
+node server.js
 
 ### Project Documentation
 For Software:
@@ -58,27 +65,127 @@ For Software:
 *Add caption explaining what this shows*
 
 # Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
+                         ┌───────────────────────┐
+                         │         USER          │
+                         └───────────┬───────────┘
+                                     │
+                                     ▼
+                         ┌───────────────────────┐
+                         │    WELCOME SCREEN     │
+                         │ "WHO ATE MY FOOD?"    │
+                         └───────────┬───────────┘
+                                     │
+                              Start Investigation
+                                     │
+                                     ▼
+                         ┌───────────────────────┐
+                         │   UPLOAD BEFORE       │
+                         │       IMAGE           │
+                         │       📸🍕            │
+                         └───────────┬───────────┘
+                                     │
+                                     ▼
+                         ┌───────────────────────┐
+                         │   SUSPICION SCREEN    │
+                         │ Something suspicious?│
+                         └───────────┬───────────┘
+                                     │
+                                YES / CHECK
+                                     │
+                                     ▼
+                         ┌───────────────────────┐
+                         │   UPLOAD AFTER        │
+                         │       IMAGE           │
+                         │       📸🍕            │
+                         └───────────┬───────────┘
+                                     │
+                                     ▼
+                         ┌───────────────────────┐
+                         │    ENTER SUSPECTS     │
+                         │  Alex, Sam, Mia, etc. │
+                         └───────────┬───────────┘
+                                     │
+                              Click Continue
+                                     │
+                                     ▼
+              ╔══════════════════════════════════════════╗
+              ║             FRONTEND (JS)                ║
+              ║                                          ║
+              ║  Creates FormData containing:            ║
+              ║  • BEFORE image                          ║
+              ║  • AFTER image                           ║
+              ║  • Suspect list                          ║
+              ╚══════════════════╤═══════════════════════╝
+                                 │
+                         HTTP POST /analyze
+                                 │
+                                 ▼
+              ╔══════════════════════════════════════════╗
+              ║          NODE.JS + EXPRESS               ║
+              ║              BACKEND                     ║
+              ║                                          ║
+              ║  • Receives uploaded images              ║
+              ║  • Receives suspect list                 ║
+              ║  • Processes the request                 ║
+              ╚══════════════════╤═══════════════════════╝
+                                 │
+                          Send images to AI
+                                 │
+                                 ▼
+              ╔══════════════════════════════════════════╗
+              ║             GOOGLE GEMINI AI             ║
+              ║                                          ║
+              ║  Compares BEFORE and AFTER images        ║
+              ║                                          ║
+              ║  Determines:                             ║
+              ║  • Is food reduced?                      ║
+              ║  • What appears to be missing?           ║
+              ╚══════════════════╤═══════════════════════╝
+                                 │
+                         AI analysis returned
+                                 │
+                                 ▼
+              ╔══════════════════════════════════════════╗
+              ║          BACKEND INVESTIGATION           ║
+              ║                                          ║
+              ║       Was food reduced?                  ║
+              ║             /       \                    ║
+              ║           NO         YES                 ║
+              ║           │           │                  ║
+              ║           ▼           ▼                  ║
+              ║      FALSE ALARM    RANDOMLY SELECT      ║
+              ║      / CASE CLOSED  A SUSPECT            ║
+              ║                       │                  ║
+              ║                       ├─ Suspicion %    ║
+              ║                       │                  ║
+              ║                       └─ Funny Evidence ║
+              ╚══════════════════════╤═══════════════════╝
+                                     │
+                              JSON RESPONSE
+                                     │
+                                     ▼
+              ╔══════════════════════════════════════════╗
+              ║             FRONTEND (JS)                ║
+              ║                                          ║
+              ║  Receives backend result                 ║
+              ║  and updates the result screen           ║
+              ╚══════════════════════╤═══════════════════╝
+                                     │
+                        ┌────────────┴────────────┐
+                        │                         │
+                        ▼                         ▼
+                 FOOD NOT REDUCED          FOOD REDUCED
+                        │                         │
+                        ▼                         ▼
+                ┌───────────────┐       ┌─────────────────┐
+                │  FALSE ALARM  │       │ FOOD CRIME 🚨  │
+                │               │       │                 │
+                │ "Enjoy your   │       │ Missing food    │
+                │ food!"        │       │ Suspect         │
+                └───────────────┘       │ Suspicion %     │
+                                        │ Evidence        │
+                                        └─────────────────┘
 
-For Hardware:
-
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
-# Build Photos
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
 
 ### Project Demo
 # Video
