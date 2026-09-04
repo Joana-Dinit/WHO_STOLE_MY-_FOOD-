@@ -196,9 +196,20 @@ For Software:
 [Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+-Aryalakshmi ES – Frontend 
+
+Designed and developed the interactive user interface using HTML, CSS, and JavaScript.
+Created the different screens and user flow, including the welcome screen, food image upload, suspicion screen, suspect entry, and result screen.
+Implemented image selection and collection of suspect names.
+Connected the frontend with the backend API and displayed the investigation results.
+
+-Joana Dinit – Backend & AI Integration
+
+Developed the backend using Node.js and Express.js.
+Created the /analyze API to receive BEFORE and AFTER food images and the suspect list.
+Integrated Google Gemini AI to compare the food images and determine whether the food appears to have been reduced.
+Implemented the investigation logic, including fictional suspect selection, suspicion percentage, and humorous evidence.
+Tested the API using Postman and handled file uploads using Multer.
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
