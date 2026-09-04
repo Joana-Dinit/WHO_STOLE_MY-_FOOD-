@@ -1,3 +1,4 @@
+
 const welcomeScreen = document.getElementById("welcomeScreen");
 const startButton = document.getElementById("startButton");
 
@@ -13,6 +14,7 @@ const noSuspicion = document.getElementById("noSuspicion");
 
 const last = document.getElementById("last");
 const afterPhotoScreen = document.getElementById("afterPhotoScreen");
+const afterImage = document.getElementById("afterImage");
 const afterImageButton = document.getElementById("afterImageButton");
 
 const peopleScreen = document.getElementById("peopleScreen");
@@ -131,7 +133,7 @@ continueButton.addEventListener("click", async function() {
 
     try {
 
-        const response = await fetch(CONFIG.BACKEND_URL, {
+        const response = await fetch(`${CONFIG.BACKEND_URL}`, {
             method: "POST",
             body: formData
         });
