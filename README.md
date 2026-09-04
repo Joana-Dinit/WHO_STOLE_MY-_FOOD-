@@ -136,24 +136,22 @@ _Explain what the video demonstrates_
 
 ## Team Contributions
 
-- ## Team Contributions
 
-### Aryalakshmi E S
+-Aryalakshmi ES – Frontend 
 
-- Frontend development
-- HTML/CSS/JavaScript implementation
-- User interaction and screen navigation
-- Photo upload handling
-- People input and validation
-- Result-screen functionality
-- Print and restart functionality
+Designed and developed the interactive user interface using HTML, CSS, and JavaScript.
+Created the different screens and user flow, including the welcome screen, food image upload, suspicion screen, suspect entry, and result screen.
+Implemented image selection and collection of suspect names.
+Connected the frontend with the backend API and displayed the investigation results.
 
-### Joana Dinit
+-Joana Dinit – Backend & AI Integration
 
-- Backend development
-- Gemini API integration
-- AI image-analysis workflow
-- Backend/frontend integration
+Developed the backend using Node.js and Express.js.
+Created the /analyze API to receive BEFORE and AFTER food images and the suspect list.
+Integrated Google Gemini AI to compare the food images and determine whether the food appears to have been reduced.
+Implemented the investigation logic, including fictional suspect selection, suspicion percentage, and humorous evidence.
+Tested the API using Postman and handled file uploads using Multer.
+>>>>>>> 8ad0eb3 (Enhance team contributions in README)
 
 ---
 
