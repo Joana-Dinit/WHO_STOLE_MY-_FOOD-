@@ -55,14 +55,24 @@ node server.js
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+home page
+https://drive.google.com/file/d/1IJuWUvjBHXWYDdNjH7bIMn3ynyrZG5IY/view?usp=sharing
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+upload you initial photo of food item
+https://drive.google.com/file/d/19NcQopHy_HXHGQ19kcY9NBcK-gLhp8y1/view?usp=sharing
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+upload image of food after an interval
+https://drive.google.com/file/d/1tCnj9Tx41Qc5IRUep5TNeVkVcJcqpV4B/view?usp=sharing
+
+sample of image before and after
+https://drive.google.com/file/d/1Bv5NDNIIUtjZIzHgNxwajZ5d1G_V7r3b/view?usp=sharing
+
+investigated using api integration
+https://drive.google.com/file/d/1YlE2YlVfeBTUADMBK7Z1HXySaBrmgYkn/view?usp=sharing
+
+final report of suspect based on "Evidences"
+https://drive.google.com/file/d/1U_nchw9njFkiE9kiE5mP1iWJ-mtiJdOk/view?usp=sharing
+
 
 # Diagrams
                          ┌───────────────────────┐
@@ -189,11 +199,9 @@ For Software:
 
 ### Project Demo
 # Video
-[Add your demo video link here]
+
 *Explain what the video demonstrates*
 
-# Additional Demos
-[Add any extra demo materials/links]
 
 ## Team Contributions
 -Aryalakshmi ES – Frontend 
