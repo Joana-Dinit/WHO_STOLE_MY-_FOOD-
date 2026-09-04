@@ -199,9 +199,8 @@ https://drive.google.com/file/d/1U_nchw9njFkiE9kiE5mP1iWJ-mtiJdOk/view?usp=shari
 
 ### Project Demo
 # Video
-
-*Explain what the video demonstrates*
-
+https://drive.google.com/file/d/1Sf-HvkXsnhrQNyXRdk3kA7wP6QnXu-pQ/view?usp=sharing
+The video gives a brief description on how to navigate our website. We first upload the images of our food before and after some time. Using Ai integration using API, we analyze whether the after status if food has any changes or whether something is missing. If it is, then we gather a group of suspects and blame a random person based on some solid "evidences". The suspect, suspicion percentage, and the supporting evidence is displayed at the end thereby randomly helping us put blame on any random person. If no food is missing, then the website declares a false alarm
 
 ## Team Contributions
 -Aryalakshmi ES – Frontend 
