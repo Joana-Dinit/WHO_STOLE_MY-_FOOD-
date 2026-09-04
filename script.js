@@ -1,3 +1,4 @@
+
 const welcomeScreen = document.getElementById("welcomeScreen");
 const startButton = document.getElementById("startButton");
 
@@ -114,7 +115,7 @@ continueButton.addEventListener("click", async function() {
 
     try {
 
-        const response = await fetch("http://localhost:5000/analyze", {
+        const response = await fetch(`${CONFIG.BACKEND_URL}/analyze`, {
             method: "POST",
             body: formData
         });
