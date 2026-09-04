@@ -1,12 +1,23 @@
 <img width="1280" height="640" alt="git (1)" src="https://github.com/user-attachments/assets/8920b256-2ba8-4988-b824-5351134eb4bd" />
 
+<<<<<<< HEAD
 # Who Ate My Food? 🍕🔎
 
 ## Basic Details
+=======
+
+
+# WHO STOLE MY FOOD 🎯
+
+
+## Basic Details
+### Team Name: Noobiess
+>>>>>>> 42991055b8d0ef942531fe29220e8b6923ccf96e
 
 ### Team Name: Noobiess
 
 ### Team Members
+<<<<<<< HEAD
 
 - Member 1: Aryalakshmi E S - Model Engineering College Thrikkakara
 - Member 2: Joana Dinit - Model Engineering College Thrikkakara
@@ -57,6 +68,42 @@ The application is intentionally fictional and does not actually identify who at
 - Gemini API — planned
 - Backend API — planned
 
+=======
+- Member 1: [Joana Dinit] - [Model Engineering College, Thrikkakara]
+- Member 2: [Aryalakshmi ES] - [Model Engineering College, Thrikkakara]
+
+### Project Description
+Who Ate My Food? is a fun, interactive AI-powered food investigation web application that determines whether our food has been reduced by comparing before and after images. If a change is detected, the system analyzes what appears to be missing and generates a fictional investigation result by randomly selecting a suspect from the list of people provided by the user, along with a random suspicion percentage and humorous evidence.
+
+### The Problem (that doesn't exist)
+Someone ate your food.
+You have no witnesses, no evidence, and absolutely no idea who did it.
+The only thing you have left is a before photo, an after photo, and a feeling of betrayal.
+
+### The Solution (that nobody asked for)
+Food is an emotion. And you totally cannot let another person mess it up. 
+Who Ate My Food? uses AI to compare before and after photos of your food and detect whether anything has mysteriously disappeared.
+And based on  "evidences" it will blame one of the people you suspect. Cuz sometimes blaming others for your own carelessness is the best form of therapy.
+
+## Technical Details
+### Technologies/Components Used
+For Software:
+-HTML5
+-CSS3
+-JavaScript
+-Node.js
+-Express.js
+-Google Gemini AI
+-Multer
+-CORS
+-dotenv
+-Git & GitHub
+-Postman
+
+For Hardware:
+- None
+- 
+>>>>>>> 42991055b8d0ef942531fe29220e8b6923ccf96e
 ### Implementation
 
 For Software:
@@ -72,12 +119,18 @@ For Software:
 - Backend will be deployed using Render
 
 # Installation
+<<<<<<< HEAD
 
 [commands]
 
 # Run
 
 [commands]
+=======
+npm install
+# Run
+node server.js
+>>>>>>> 42991055b8d0ef942531fe29220e8b6923ccf96e
 
 ### Project Documentation
 
@@ -98,6 +151,7 @@ _Add caption explaining what this shows_
 _Add caption explaining what this shows_
 
 # Diagrams
+<<<<<<< HEAD
 
 ![Workflow](Add your workflow/architecture diagram here)
 _Add caption explaining your workflow_
@@ -122,6 +176,129 @@ _Explain the build steps_
 
 ![Final](Add photo of final product here)
 _Explain the final build_
+=======
+                         ┌───────────────────────┐
+                         │         USER          │
+                         └───────────┬───────────┘
+                                     │
+                                     ▼
+                         ┌───────────────────────┐
+                         │    WELCOME SCREEN     │
+                         │ "WHO ATE MY FOOD?"    │
+                         └───────────┬───────────┘
+                                     │
+                              Start Investigation
+                                     │
+                                     ▼
+                         ┌───────────────────────┐
+                         │   UPLOAD BEFORE       │
+                         │       IMAGE           │
+                         │       📸🍕            │
+                         └───────────┬───────────┘
+                                     │
+                                     ▼
+                         ┌───────────────────────┐
+                         │   SUSPICION SCREEN    │
+                         │ Something suspicious?│
+                         └───────────┬───────────┘
+                                     │
+                                YES / CHECK
+                                     │
+                                     ▼
+                         ┌───────────────────────┐
+                         │   UPLOAD AFTER        │
+                         │       IMAGE           │
+                         │       📸🍕            │
+                         └───────────┬───────────┘
+                                     │
+                                     ▼
+                         ┌───────────────────────┐
+                         │    ENTER SUSPECTS     │
+                         │  Alex, Sam, Mia, etc. │
+                         └───────────┬───────────┘
+                                     │
+                              Click Continue
+                                     │
+                                     ▼
+              ╔══════════════════════════════════════════╗
+              ║             FRONTEND (JS)                ║
+              ║                                          ║
+              ║  Creates FormData containing:            ║
+              ║  • BEFORE image                          ║
+              ║  • AFTER image                           ║
+              ║  • Suspect list                          ║
+              ╚══════════════════╤═══════════════════════╝
+                                 │
+                         HTTP POST /analyze
+                                 │
+                                 ▼
+              ╔══════════════════════════════════════════╗
+              ║          NODE.JS + EXPRESS               ║
+              ║              BACKEND                     ║
+              ║                                          ║
+              ║  • Receives uploaded images              ║
+              ║  • Receives suspect list                 ║
+              ║  • Processes the request                 ║
+              ╚══════════════════╤═══════════════════════╝
+                                 │
+                          Send images to AI
+                                 │
+                                 ▼
+              ╔══════════════════════════════════════════╗
+              ║             GOOGLE GEMINI AI             ║
+              ║                                          ║
+              ║  Compares BEFORE and AFTER images        ║
+              ║                                          ║
+              ║  Determines:                             ║
+              ║  • Is food reduced?                      ║
+              ║  • What appears to be missing?           ║
+              ╚══════════════════╤═══════════════════════╝
+                                 │
+                         AI analysis returned
+                                 │
+                                 ▼
+              ╔══════════════════════════════════════════╗
+              ║          BACKEND INVESTIGATION           ║
+              ║                                          ║
+              ║       Was food reduced?                  ║
+              ║             /       \                    ║
+              ║           NO         YES                 ║
+              ║           │           │                  ║
+              ║           ▼           ▼                  ║
+              ║      FALSE ALARM    RANDOMLY SELECT      ║
+              ║      / CASE CLOSED  A SUSPECT            ║
+              ║                       │                  ║
+              ║                       ├─ Suspicion %    ║
+              ║                       │                  ║
+              ║                       └─ Funny Evidence ║
+              ╚══════════════════════╤═══════════════════╝
+                                     │
+                              JSON RESPONSE
+                                     │
+                                     ▼
+              ╔══════════════════════════════════════════╗
+              ║             FRONTEND (JS)                ║
+              ║                                          ║
+              ║  Receives backend result                 ║
+              ║  and updates the result screen           ║
+              ╚══════════════════════╤═══════════════════╝
+                                     │
+                        ┌────────────┴────────────┐
+                        │                         │
+                        ▼                         ▼
+                 FOOD NOT REDUCED          FOOD REDUCED
+                        │                         │
+                        ▼                         ▼
+                ┌───────────────┐       ┌─────────────────┐
+                │  FALSE ALARM  │       │ FOOD CRIME 🚨  │
+                │               │       │                 │
+                │ "Enjoy your   │       │ Missing food    │
+                │ food!"        │       │ Suspect         │
+                └───────────────┘       │ Suspicion %     │
+                                        │ Evidence        │
+                                        └─────────────────┘
+
+>>>>>>> 42991055b8d0ef942531fe29220e8b6923ccf96e
 
 ### Project Demo
 
