@@ -131,7 +131,7 @@ continueButton.addEventListener("click", async function() {
 
     try {
 
-        const response = await fetch("http://localhost:5000/analyze", {
+        const response = await fetch(CONFIG.BACKEND_URL, {
             method: "POST",
             body: formData
         });
