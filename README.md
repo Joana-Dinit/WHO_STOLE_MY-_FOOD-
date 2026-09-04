@@ -10,8 +10,8 @@
 
 
 ### Team Members
-- Member 1: [Joana Dinit] - [Model Engineering College, Thrikkakara]
-- Member 2: [Aryalakshmi ES] - [Model Engineering College, Thrikkakara]
+- Member 1: Joana Dinit - Model Engineering College, Thrikkakara
+- Member 2: Aryalakshmi ES - Model Engineering College, Thrikkakara
 
 ### Project Description
 Who Ate My Food? is a fun, interactive AI-powered food investigation web application that determines whether our food has been reduced by comparing before and after images. If a change is detected, the system analyzes what appears to be missing and generates a fictional investigation result by randomly selecting a suspect from the list of people provided by the user, along with a random suspicion percentage and humorous evidence.
