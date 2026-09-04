@@ -23,9 +23,14 @@ const peopleInputs = document.getElementById("peopleInputs");
 const continueButton = document.getElementById("continueButton");
 
 const resultScreen = document.getElementById("resultScreen");
-const investigateAgain = document.getElementById("investigateAgain");
+const investigateAgain = document.getElementById("investigateAgainButton");
 const printButton = document.getElementById("printButton");
 const finishButton = document.getElementById("finishButton");
+const missingDescription = document.getElementById("missingDescription");
+const caseStatus = document.getElementById("caseStatus");
+const suspect = document.getElementById("suspect");
+const suspicion = document.getElementById("suspicion");
+const evidence = document.getElementById("evidence");
 
 let beforePhotoFile = null;
 let afterPhotoFile = null;
@@ -36,19 +41,22 @@ startButton.addEventListener("click", function() {
 });
 
 beforeImageButton.addEventListener("click", function() {
-    
+
     if (beforeImage.files.length === 0) {
-    alert("No image is selected");
+        alert("No image is selected");
     }
-    else { 
-    beforePhotoFile = beforeImage.files[0];
-    foodScreen.style.display = "none";
-    loadingScreen.style.display ="block";
-    setTimeout(function() {
-        loadingScreen.style.display = "none";
-        suspicionScreen.style.display = "block";
-    }, 10000);
+    else {
+        beforePhotoFile = beforeImage.files[0];
+
+        foodScreen.style.display = "none";
+        loadingScreen.style.display = "block";
+
+        setTimeout(function() {
+            loadingScreen.style.display = "none";
+            suspicionScreen.style.display = "block";
+        }, 5000);
     }
+
 });
 
 yesSuspicion.addEventListener("click", function() {
@@ -102,16 +110,25 @@ continueButton.addEventListener("click", async function() {
 
     });
 
+    // Make sure at least two actual names were entered
     if (people.length < 2) {
         alert("Need at least two people");
         return;
     }
 
+    // Create multipart/form-data
     const formData = new FormData();
 
+    // Add the two image files
     formData.append("beforeImage", beforePhotoFile);
     formData.append("afterImage", afterPhotoFile);
+
+    // Backend expects the field name "suspects"
     formData.append("suspects", JSON.stringify(people));
+
+    // Show loading screen while backend works
+    peopleScreen.style.display = "none";
+    loadingScreen.style.display = "block";
 
     try {
 
@@ -126,11 +143,32 @@ continueButton.addEventListener("click", async function() {
 
         const data = await response.json();
 
-        resultScreen.querySelector("h2").textContent = data.resultMessage;
+        console.log("BACKEND RESPONSE:", data);
 
-        if (data.foodReduced) {
+        // Hide loading screen
+        loadingScreen.style.display = "none";
 
-            suspect.textContent = "Primary Suspect: " + data.suspect;
+        // Show result screen
+        resultScreen.style.display = "block";
+
+        // Display case status
+        caseStatus.textContent = data.caseStatus;
+
+        // Display missing food description
+        missingDescription.textContent =
+            "Missing: " + data.missingDescription;
+
+        // -----------------------------------------
+        // FOOD WAS REDUCED
+        // -----------------------------------------
+
+        if (data.foodReduced === true) {
+
+            resultScreen.querySelector("h2").textContent =
+                data.resultMessage;
+
+            suspect.textContent =
+                "Primary Suspect: " + data.suspect;
 
             suspicion.textContent =
                 "Suspicion: " + data.suspicion + "%";
@@ -138,27 +176,39 @@ continueButton.addEventListener("click", async function() {
             evidence.textContent =
                 "Evidence: " + data.evidence;
 
-        } else {
+        }
 
-            suspect.textContent = "🚨 False Alarm!";
+        // -----------------------------------------
+        // FOOD WAS NOT REDUCED
+        // -----------------------------------------
+
+        else {
+
+            resultScreen.querySelector("h2").textContent =
+                data.resultMessage;
+
+            suspect.textContent =
+                "No suspect required.";
 
             suspicion.textContent =
-                "No significant food reduction detected.";
+                "False alarm! No significant food reduction detected.";
 
             evidence.textContent =
-                "Case closed. Your food may have simply looked suspicious. 😂";
+                "Case closed. Nobody is being blamed this time. 😂";
 
         }
 
-        peopleScreen.style.display = "none";
-        resultScreen.style.display = "block";
+    }
 
-    } catch (error) {
+    catch (error) {
 
-        console.error(error);
+        console.error("BACKEND ERROR:", error);
+
+        loadingScreen.style.display = "none";
+        peopleScreen.style.display = "block";
 
         alert(
-            "Could not connect to the food detective backend. Make sure the server is running."
+            "Could not connect to the food detective backend. Make sure the backend server is running."
         );
 
     }
